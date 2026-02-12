@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERY IMPORTANT MESSAGE 💘</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="site.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+      <span class="ticker">
+        ❤️ BREAKING NEWS: You are extremely cute
+        ❤️&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 💘 SCIENTISTS BAFFLED: Local
+        person refuses to stop thinking about you
+        💘&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 🌹 URGENT: Please read the card
+        below. It is very important. 🌹&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ✨
+        ALSO: You smell nice. This is a fact.
+        ✨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+
+    <!-- FLOATING HEARTS BACKGROUND -->
+    <div class="hearts-bg" id="heartsContainer"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="card-wrap">
+      <div class="stamp">🔒 Top Secret Romantic Document 🔒</div>
+
+      <h1>Hey,&nbsp;You.</h1>
+
+      <div class="card">
+        <div class="poem">
+          <span class="line">Roses are red,</span>
+          <span class="line">Violets are blue,</span>
+          <span class="line bold">I tried writing a poem</span>
+          <span class="line bold">and it's all about you.</span>
+          <br />
+          <span class="line">You're funny and kind,</span>
+          <span class="line">and also quite great,</span>
+          <span class="line bold">and honestly this poem</span>
+          <span class="line bold">ran out of rhymes. Fate.</span>
+        </div>
+        <div class="divider">💕 💕 💕</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-size: 0.78rem; color: #c084a0; margin-top: 4px">
+          (5 stars — reviewed by me, your biggest fan)
+        </p>
+      </div>
+
+      <p class="question">Will you be my Valentine? 💌</p>
+
+      <div class="btn-row" id="btnRow">
+        <button class="btn-yes" onclick="sayYes()">💖 YES! Obviously!</button>
+        <button
+          class="btn-no"
+          id="noBtn"
+          onmouseover="runAway()"
+          ontouchstart="runAway()"
+        >
+          No
+        </button>
+      </div>
+
+      <span class="sparkle-strip">✨ 💖 ✨ 💖 ✨ 💖 ✨</span>
+
+      <p class="footer-note">
+        * The "No" button is buggy. We apologise for the inconvenience.
+      </p>
+    </div>
+
+    <!-- YES SCREEN -->
+    <div id="yes-screen">
+      <span class="big-emoji">🥳</span>
+      <h2>SHE SAID YES!!</h2>
+      <p>
+        Excellent choice. Truly. The correct choice.<br />You are legally my
+        Valentine now. It's done.
+      </p>
+      <span style="font-size: 3rem">💘💘💘</span>
+      <p style="font-size: 0.95rem; color: #ffb3d5">
+        I knew you would. I had this whole page ready and everything.
+      </p>
+    </div>
+
+    <script src="site.js"></script>
+  </body>
+</html>
