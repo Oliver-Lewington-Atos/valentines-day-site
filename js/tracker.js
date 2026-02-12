@@ -23,15 +23,8 @@ const EMAILJS_TEMPLATE_ID = "template_252m5he";
   }
 
   // ── Guard: credentials must be filled in ─────
-  if (
-    !EMAILJS_PUBLIC_KEY ||
-    EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY" ||
-    !EMAILJS_SERVICE_ID ||
-    EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID" ||
-    !EMAILJS_TEMPLATE_ID ||
-    EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID"
-  ) {
-    console.warn("💌 tracker: EmailJS credentials not set — edit index.html");
+  if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+    console.warn("💌 tracker: EmailJS credentials not set.");
     return;
   }
 
@@ -352,7 +345,7 @@ const EMAILJS_TEMPLATE_ID = "template_252m5he";
     collection_errors: errors.length > 0 ? errors.join(" | ") : "none",
   };
 
-  console.log("💌 tracker: payload collected, sending...");
+  console.log("💌 tracker: payload collected, sending...", payload);
 
   const success = await sendWithRetry(payload);
 
