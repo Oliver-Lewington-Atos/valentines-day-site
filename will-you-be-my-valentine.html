@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERY IMPORTANT MESSAGE 💘</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #ff4fa3;
+        --hot: #ff006e;
+        --red: #e8003a;
+        --cream: #fff5f9;
+        --yellow: #ffe94a;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--cream);
+        font-family: "Comic Neue", "Comic Sans MS", cursive;
+        min-height: 100vh;
+        overflow-x: hidden;
+        cursor:
+          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='26' font-size='26'>💘</text></svg>")
+            16 16,
+          auto;
+      }
+
+      /* ---- SCROLLING TICKER ---- */
+      .ticker-wrap {
+        background: var(--hot);
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 6px 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .ticker {
+        display: inline-block;
+        animation: ticker 18s linear infinite;
+      }
+      @keyframes ticker {
+        0% {
+          transform: translateX(100vw);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* ---- FLOATING HEARTS ---- */
+      .hearts-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .heart {
+        position: absolute;
+        bottom: -60px;
+        font-size: 1.6rem;
+        animation: floatUp linear infinite;
+        opacity: 0;
+      }
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(-110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* ---- MAIN CARD ---- */
+      .card-wrap {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem 1rem 4rem;
+        gap: 1.4rem;
+      }
+
+      .stamp {
+        background: var(--yellow);
+        border: 4px dashed var(--hot);
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        padding: 4px 14px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--red);
+        transform: rotate(-2deg);
+        box-shadow: 3px 3px 0 var(--pink);
+      }
+
+      h1 {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(2rem, 7vw, 4rem);
+        color: var(--hot);
+        text-align: center;
+        text-shadow:
+          4px 4px 0 #ffb3d5,
+          6px 6px 0 var(--red);
+        animation: wiggle 1.4s ease-in-out infinite alternate;
+        line-height: 1.2;
+      }
+      @keyframes wiggle {
+        0% {
+          transform: rotate(-2deg) scale(1);
+        }
+        100% {
+          transform: rotate(2deg) scale(1.04);
+        }
+      }
+
+      .card {
+        background: white;
+        border: 5px solid var(--pink);
+        border-radius: 20px;
+        padding: 2rem 2.4rem;
+        max-width: 460px;
+        width: 100%;
+        text-align: center;
+        box-shadow:
+          8px 8px 0 var(--pink),
+          12px 12px 0 #ffb3d5;
+        position: relative;
+      }
+
+      .card::before {
+        content: "💌";
+        position: absolute;
+        top: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.5rem;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+      }
+
+      .poem {
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: #5a2040;
+      }
+      .poem .line {
+        display: block;
+      }
+      .poem .line.bold {
+        font-weight: 700;
+        color: var(--hot);
+      }
+
+      .divider {
+        color: var(--pink);
+        font-size: 1.4rem;
+        margin: 0.6rem 0;
+        letter-spacing: 6px;
+      }
+
+      /* ---- THE QUESTION ---- */
+      .question {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        color: var(--red);
+        text-align: center;
+        animation: pulse 0.9s ease-in-out infinite alternate;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.06);
+        }
+      }
+
+      /* ---- BUTTONS ---- */
+      .btn-row {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .btn-yes {
+        background: var(--hot);
+        color: white;
+        font-family: "Comic Neue", cursive;
+        font-size: 1.3rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 50px;
+        padding: 14px 40px;
+        cursor: pointer;
+        box-shadow: 0 6px 0 var(--red);
+        transition:
+          transform 0.1s,
+          box-shadow 0.1s;
+        animation: bounce 1.2s ease-in-out infinite alternate;
+      }
+      .btn-yes:hover {
+        transform: scale(1.12) translateY(-3px);
+        box-shadow: 0 9px 0 var(--red);
+      }
+      .btn-yes:active {
+        transform: translateY(4px);
+        box-shadow: 0 2px 0 var(--red);
+      }
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-6px);
+        }
+      }
+
+      .btn-no {
+        background: #ccc;
+        color: #666;
+        font-family: "Comic Neue", cursive;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 50px;
+        padding: 8px 22px;
+        cursor: pointer;
+        box-shadow: 0 4px 0 #aaa;
+        position: relative;
+        transition: font-size 0.2s;
+      }
+
+      /* ---- YES SCREEN ---- */
+      #yes-screen {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--hot);
+        z-index: 999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        text-align: center;
+        padding: 2rem;
+        animation: flashIn 0.4s ease;
+      }
+      @keyframes flashIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      #yes-screen h2 {
+        font-family: "Pacifico", cursive;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        color: white;
+        text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+        animation: spinBig 0.6s ease;
+      }
+      @keyframes spinBig {
+        0% {
+          transform: rotate(-20deg) scale(0.5);
+        }
+        100% {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+      #yes-screen p {
+        font-size: 1.3rem;
+        color: #ffe0ee;
+        font-weight: 700;
+        max-width: 400px;
+      }
+      .big-emoji {
+        font-size: 5rem;
+      }
+
+      /* ---- FOOTER ---- */
+      .footer-note {
+        font-size: 0.72rem;
+        color: #bbb;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      /* ---- STAR RATING ---- */
+      .stars {
+        color: var(--yellow);
+        font-size: 1.4rem;
+        text-shadow: 0 0 6px var(--hot);
+      }
+
+      /* ---- SPARKLE ---- */
+      .sparkle-strip {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+        animation: sparkleFlash 1.2s linear infinite alternate;
+      }
+      @keyframes sparkleFlash {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+      <span class="ticker">
+        ❤️ BREAKING NEWS: You are extremely cute
+        ❤️&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 💘 SCIENTISTS BAFFLED: Local
+        person refuses to stop thinking about you
+        💘&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 🌹 URGENT: Please read the card
+        below. It is very important. 🌹&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ✨
+        ALSO: You smell nice. This is a fact.
+        ✨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+
+    <!-- FLOATING HEARTS BACKGROUND -->
+    <div class="hearts-bg" id="heartsContainer"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="card-wrap">
+      <div class="stamp">🔒 Top Secret Romantic Document 🔒</div>
+
+      <h1>Hey,&nbsp;You.</h1>
+
+      <div class="card">
+        <div class="poem">
+          <span class="line">Roses are red,</span>
+          <span class="line">Violets are blue,</span>
+          <span class="line bold">I tried writing a poem</span>
+          <span class="line bold">and it's all about you.</span>
+          <br />
+          <span class="line">You're funny and kind,</span>
+          <span class="line">and also quite great,</span>
+          <span class="line bold">and honestly this poem</span>
+          <span class="line bold">ran out of rhymes. Fate.</span>
+        </div>
+        <div class="divider">💕 💕 💕</div>
+        <div class="stars">★★★★★</div>
+        <p style="font-size: 0.78rem; color: #c084a0; margin-top: 4px">
+          (5 stars — reviewed by me, your biggest fan)
+        </p>
+      </div>
+
+      <p class="question">Will you be my Valentine? 💌</p>
+
+      <div class="btn-row" id="btnRow">
+        <button class="btn-yes" onclick="sayYes()">💖 YES! Obviously!</button>
+        <button
+          class="btn-no"
+          id="noBtn"
+          onmouseover="runAway()"
+          ontouchstart="runAway()"
+        >
+          No
+        </button>
+      </div>
+
+      <span class="sparkle-strip">✨ 💖 ✨ 💖 ✨ 💖 ✨</span>
+
+      <p class="footer-note">
+        * The "No" button is buggy. We apologise for the inconvenience.
+      </p>
+    </div>
+
+    <!-- YES SCREEN -->
+    <div id="yes-screen">
+      <span class="big-emoji">🥳</span>
+      <h2>SHE SAID YES!!</h2>
+      <p>
+        Excellent choice. Truly. The correct choice.<br />You are legally my
+        Valentine now. It's done.
+      </p>
+      <span style="font-size: 3rem">💘💘💘</span>
+      <p style="font-size: 0.95rem; color: #ffb3d5">
+        I knew you would. I had this whole page ready and everything.
+      </p>
+    </div>
+
+    <script>
+      // ---- FLOATING HEARTS ----
+      const emojis = ["❤️", "💕", "💖", "💗", "💓", "💞", "🌹", "✨", "💘"];
+      const container = document.getElementById("heartsContainer");
+      for (let i = 0; i < 26; i++) {
+        const h = document.createElement("span");
+        h.className = "heart";
+        h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.animationDuration = 6 + Math.random() * 10 + "s";
+        h.style.animationDelay = Math.random() * 12 + "s";
+        h.style.fontSize = 1 + Math.random() * 1.4 + "rem";
+        container.appendChild(h);
+      }
+
+      // ---- RUNAWAY NO BUTTON ----
+      let noClicks = 0;
+      const noBtn = document.getElementById("noBtn");
+      const btnRow = document.getElementById("btnRow");
+
+      function runAway() {
+        noClicks++;
+        const maxMove = 180;
+        const rx = (Math.random() - 0.5) * maxMove * 2;
+        const ry = (Math.random() - 0.5) * maxMove;
+        noBtn.style.transition = "transform 0.25s ease, font-size 0.3s";
+        noBtn.style.transform = `translate(${rx}px, ${ry}px) rotate(${rx / 6}deg)`;
+
+        // Gets smaller each hover
+        const sizes = ["0.9rem", "0.75rem", "0.62rem", "0.5rem", "0.38rem"];
+        noBtn.style.fontSize = sizes[Math.min(noClicks - 1, sizes.length - 1)];
+
+        if (noClicks >= 10) {
+          noBtn.style.opacity = "0";
+          noBtn.style.pointerEvents = "none";
+          setTimeout(() => {
+            noBtn.remove();
+          }, 400);
+        }
+      }
+
+      // ---- YES ACTION ----
+      function sayYes() {
+        const ys = document.getElementById("yes-screen");
+        ys.style.display = "flex";
+        // Extra hearts explosion
+        for (let i = 0; i < 20; i++) {
+          const h = document.createElement("span");
+          h.className = "heart";
+          h.textContent = ["💖", "💘", "🎉", "✨", "🌹"][
+            Math.floor(Math.random() * 5)
+          ];
+          h.style.left = Math.random() * 100 + "vw";
+          h.style.animationDuration = 3 + Math.random() * 4 + "s";
+          h.style.animationDelay = "0s";
+          h.style.fontSize = 2 + Math.random() * 2 + "rem";
+          h.style.zIndex = 1000;
+          container.appendChild(h);
+        }
+      }
+    </script>
+  </body>
+</html>
