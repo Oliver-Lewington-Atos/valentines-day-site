@@ -10,8 +10,8 @@ Asks someone to be your Valentine. The **Yes** button is big, pink, and satisfyi
 
 ```
 ├── index.html   # markup
-├── style.css    # styles & animations
-├── script.js    # button logic (the no button escaping, the yes ripple)
+├── site.css    # styles & animations
+├── site.js    # button logic (the no button escaping, the yes ripple)
 └── README.md    # you are here
 ```
 
